@@ -1,0 +1,2309 @@
+/* =====================================================
+   1. BODY - ALL PAGES
+===================================================== */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family:
+        'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #1b1c6b,
+            rgb(0, 0, 0)
+        );
+}
+
+h1,
+h2,
+navbar h2 {
+    font-family:
+        'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+}
+
+h3 {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   DARK BACKGROUND ANIMATION
+===================================================== */
+
+@keyframes darkAnimation {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =====================================================
+   2. NAVBAR
+===================================================== */
+
+.navbar {
+    width: 100%;
+     background:
+        linear-gradient(
+            120deg,
+            rgb(0, 0, 0),
+            #1b1c6b
+        );
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 15px 30px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    z-index: 5000;
+
+}
+
+
+/* Navbar links */
+
+.navbar a,
+.navbar a:link,
+.navbar a:visited,
+.navbar a:hover,
+.navbar a:active {
+
+    color: white;
+    margin-right: 2em;
+    text-decoration: none !important;
+}
+
+
+/* =====================================================
+   RIDERHUB LOGO
+===================================================== */
+
+.riderhub-logo {
+margin: -30px auto -30px 10px;
+    width: 300px;
+    height: auto;
+}
+
+
+/* =====================================================
+   MENU BUTTON
+===================================================== */
+
+.menu-btn {
+
+    margin-right: -1em;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    padding: 10px;
+
+    z-index: 5000;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.menu-btn:hover {
+
+    transform: scale(1.15);
+
+    color: #168bff;
+}
+
+
+/* =====================================================
+   3. PAGE CONTAINER
+===================================================== */
+
+.page-container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: stretch;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   MAIN WEBSITE CONTENT
+===================================================== */
+
+.main-content {
+
+    width: 100%;
+
+    min-width: 0;
+
+    flex-shrink: 0;
+
+    order:2;
+    transition:
+        width 0.6s ease;
+}
+
+
+/* =====================================================
+   MAIN CONTENT WHEN MENU OPENS
+===================================================== */
+
+.page-container.menu-open .main-content {
+    width: 80%;
+}
+
+
+/* =====================================================
+   4. SIDE MENU
+===================================================== */
+
+.menu-content {
+    
+
+    width: 0;
+
+    min-width: 0;
+
+    height: 100vh;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    padding: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    transition:
+        width 0.6s ease,
+        min-width 0.6s ease,
+        padding 0.6s ease,
+        opacity 0.4s ease;
+
+        order:1;
+}
+
+
+/* =====================================================
+   MENU OPEN
+===================================================== */
+
+.page-container.menu-open .menu-content { 
+
+    width: 20%;
+
+    min-width: 20%;
+
+    height: 100vh;
+
+    padding: 100px 50px 50px;
+
+    opacity: 1;
+}
+
+/* =====================================================
+   5. MENU SEARCH / FILTER
+===================================================== */
+
+.price-filter {
+
+    margin-top: -5em;
+
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    color: white;
+
+    flex-shrink: 0;
+}
+
+
+.price-filter label {
+
+    color: white;
+
+    font-size: 20px;
+}
+
+
+.price-filter select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+
+    font-size: 16px;
+
+    background: white;
+
+    color: black;
+
+    border: none;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   6. MENU LINKS
+===================================================== */
+
+.menu-content a {
+
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transform: translateX(40px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        padding-left 0.3s ease;
+}
+
+
+/* =====================================================
+   SHOW MENU LINKS
+===================================================== */
+
+.page-container.menu-open .menu-content a {
+
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =====================================================
+   MENU LINK DELAYS
+===================================================== */
+
+.page-container.menu-open
+.menu-content a:nth-of-type(1) {
+
+    transition-delay: 0.15s;
+}
+
+
+.page-container.menu-open
+.menu-content a:nth-of-type(2) {
+
+    transition-delay: 0.25s;
+}
+
+
+.page-container.menu-open
+.menu-content a:nth-of-type(3) {
+
+    transition-delay: 0.35s;
+}
+
+
+.page-container.menu-open
+.menu-content a:nth-of-type(4) {
+
+    transition-delay: 0.45s;
+}
+
+
+/* =====================================================
+   MENU LINK HOVER
+===================================================== */
+
+.menu-content a:hover {
+
+    background: #333;
+
+    padding-left: 25px;
+}
+
+
+/* =====================================================
+   7. DROPDOWN
+===================================================== */
+
+.dropdown {
+
+    position: relative;
+}
+
+
+/* Dropdown links */
+
+.dropdown-content li a,
+.dropdown-content li a:link,
+.dropdown-content li a:visited,
+.dropdown-content li a:hover,
+.dropdown-content li a:active {
+
+    color: white;
+
+    text-decoration: none !important;
+}
+
+
+/* Dropdown box */
+
+.dropdown-content {
+
+    position: absolute;
+
+    top: calc(100% + 12px);
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(-15px)
+        scale(0.95);
+
+    width: 150px;
+
+    max-height: 500px;
+
+    overflow-y: auto;
+
+    background: rgb(1, 1, 61);
+
+    backdrop-filter: blur(10px);
+
+    border:
+        1px solid
+        rgba(255, 254, 254, 0.12);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 1000;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 8px 0;
+}
+
+
+.dropdown-content li {
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* Dropdown product links */
+
+.dropdown-content li a {
+
+    display: block;
+
+    padding: 12px 16px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    opacity: 0;
+
+    transform: translateX(-10px);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        padding-left 0.25s ease,
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+/* Dropdown hover */
+
+.dropdown-content li a:hover {
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    color: #fdffff;
+
+    padding-left: 22px;
+}
+
+
+/* Dropdown open */
+
+.dropdown:hover .dropdown-content {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scale(1);
+}
+
+
+/* Dropdown links animation */
+
+.dropdown:hover
+.dropdown-content li a {
+
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* Dropdown delays */
+
+.dropdown:hover
+.dropdown-content li:nth-child(1) a {
+    transition-delay: 0.03s;
+}
+
+.dropdown:hover
+.dropdown-content li:nth-child(2) a {
+    transition-delay: 0.06s;
+}
+
+.dropdown:hover
+.dropdown-content li:nth-child(3) a {
+    transition-delay: 0.09s;
+}
+
+.dropdown:hover
+.dropdown-content li:nth-child(4) a {
+    transition-delay: 0.12s;
+}
+
+.dropdown:hover
+.dropdown-content li:nth-child(5) a {
+    transition-delay: 0.15s;
+}
+
+.dropdown:hover
+.dropdown-content li:nth-child(6) a {
+    transition-delay: 0.18s;
+}
+
+.dropdown:hover
+.dropdown-content li:nth-child(7) a {
+    transition-delay: 0.21s;
+}
+
+.dropdown:hover
+.dropdown-content li:nth-child(8) a {
+    transition-delay: 0.24s;
+}
+
+.dropdown:hover
+.dropdown-content li:nth-child(9) a {
+    transition-delay: 0.27s;
+}
+
+.dropdown:hover
+.dropdown-content li:nth-child(10) a {
+    transition-delay: 0.30s;
+}
+
+
+/* Dropdown scrollbar */
+
+.dropdown-content::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+
+    background: #000;
+
+    border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+
+/* =====================================================
+   8. COMMON BUTTONS
+===================================================== */
+
+.button,
+button {
+
+    background: #ff5722;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   9. HOME PAGE - MAIN BANNER
+===================================================== */
+
+.imageimg {
+
+    position: relative;
+
+    margin-top: -1em;
+
+    margin-left: 8em;
+
+    width: 80%;
+}
+
+
+.imageimg img {
+
+    background: transparent;
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+
+.imagecontent {
+
+    width: 90px;
+
+    margin-top: -44%;
+
+    max-width: 40px;
+
+    margin-left: 3%;
+
+    padding-top: 100px;
+
+    color: #eee;
+}
+
+
+.imagecontent h1 {
+
+    font-size: 88px;
+
+    margin-bottom: 15px;
+
+    font-family: 'Coiny', cursive;
+}
+
+
+.imagecontent p {
+
+    font-size: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+.imagecontent .button {
+
+    display: inline-block;
+
+    padding: 20px 50px;
+
+    text-decoration: none;
+
+    border-radius: 5%;
+
+    background-color: rgb(255, 153, 0);
+
+    color: white;
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+
+    border: 0.5px solid white;
+}
+
+
+.imagecontent .button:hover,
+.imagecontent .button:active {
+
+    background-color: rgb(255, 0, 0);
+
+    transform: scale(1.35);
+
+    box-shadow:
+        0 0 20px #fafafa;
+}
+
+
+/* =====================================================
+   HOME BANNER MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .imagecontent {
+
+        width: 80%;
+
+        margin-left: 5%;
+
+        padding-top: 50px;
+    }
+
+    .imagecontent h1 {
+
+        font-size: 35px;
+    }
+
+    .imagecontent p {
+
+        font-size: 16px;
+    }
+}
+
+
+
+
+/* =====================================================
+   10. FOUR PRODUCT IMAGES
+===========================================================================*/
+.imageimage {
+    margin-top: -20px;
+    padding: 30px;
+     background:
+        linear-gradient(
+            120deg,
+            rgb(0, 0, 0),
+            #1b1c6b
+        );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+     box-shadow:8px 4px 4px
+        rgb(0, 0, 10);
+}
+
+.product-image {
+    width: 15%;
+    opacity: 0;
+    transform: scale(0.4);
+    visibility: hidden;
+}
+
+.product-image img {
+    width: 100%;
+}
+
+.product-image:hover{
+    
+    
+}
+
+/* =================================
+   BEFORE SECTION IS REACHED
+   ================================= */
+
+.rolling-wheel {
+    position: absolute;
+    left: -150px;
+    width: 200px;
+    z-index: 10;
+    
+    opacity: 0;
+}
+
+.wheel-smoke {
+    position: absolute;
+    left: -100px;
+    width: 70px;
+    height: 40px;
+    z-index: 9;
+
+    opacity: 0;
+}
+
+
+/* =================================
+   START ANIMATION
+   ================================= */
+
+.imageimage.animate .rolling-wheel {
+    animation: wheelRoll 2.5s linear forwards;
+}
+
+.imageimage.animate .wheel-smoke {
+    animation: smokeRoll 2.5s linear forwards;
+}
+
+
+/* =================================
+   PRODUCT IMAGES
+   ================================= */
+
+.imageimage.animate .product-image:nth-child(1) {
+    animation: productPop 0.7s ease-out 0.7s forwards;
+}
+
+.imageimage.animate .product-image:nth-child(2) {
+    animation: productPop 0.7s ease-out 1.1s forwards;
+}
+
+.imageimage.animate .product-image:nth-child(3) {
+    animation: productPop 0.7s ease-out 1.5s forwards;
+}
+
+.imageimage.animate .product-image:nth-child(4) {
+    animation: productPop 0.7s ease-out 1.9s forwards;
+}
+
+
+/* =================================
+   WHEEL
+   ================================= */
+
+@keyframes wheelRoll {
+
+    0% {
+        left: -150px;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        left: calc(100% + 50px);
+        transform: rotate(720deg);
+        opacity: 0;
+    }
+}
+
+
+/* =================================
+   SMOKE
+   ================================= */
+
+@keyframes smokeRoll {
+
+    0% {
+        left: -120px;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        left: calc(100% + 80px);
+        opacity: 0;
+    }
+}
+
+
+/* =================================
+   SMOKE PARTICLES
+   ================================= */
+
+.wheel-smoke::before,
+.wheel-smoke::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 70px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.wheel-smoke::before {
+    left: 0;
+    bottom: 0;
+    animation: smokeParticle 0.8s ease-out infinite;
+}
+
+.wheel-smoke::after {
+    left: 90px;
+    bottom: 0px;
+    top: 50px;
+    animation: smokeParticle 1s ease-out 0.2s infinite;
+}
+
+@keyframes smokeParticle {
+
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translate(-25px, -35px) scale(1.4);
+        opacity: 0;
+    }
+}
+
+
+/* =================================
+   PRODUCT POP
+   ================================= */
+
+@keyframes productPop {
+
+    0% {
+        opacity: 0;
+        visibility: visible;
+        transform: scale(0.4);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+}
+/* =====================================================
+   11. ABOUT
+===================================================== */
+
+.about {
+
+    width: 100%;
+
+    padding: 40px 30px;
+
+    color: white;
+
+    margin-bottom: 3em;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: start;
+
+    box-sizing: border-box;
+}
+
+
+.about-title {
+
+    order: 1;
+
+    text-align: center;
+
+    margin-left: -6em;
+
+    margin-top: 0;
+
+    padding-top: 20px;
+}
+
+
+.about-title h1 {
+
+    font-size: 50px;
+
+    margin: 0;
+}
+
+
+.about-text {
+
+    order: 2;
+}
+
+
+.about-text p {
+
+    width: 90%;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin:
+        0 0 20px 0;
+}
+
+
+/* =====================================================
+   12. BIKE BRANDS
+===================================================== */
+
+.bike-brands {
+
+    margin-top: -6em;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: white;
+}
+
+
+.bike-brands h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 35px;
+}
+
+
+/* Brand logos */
+
+.brand-logos {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 35px;
+}
+
+
+.brand-logos a {
+
+    width: 125px;
+
+    height: 140px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    opacity: 0;
+
+    transform: scale(0.2);
+
+    transition:
+        transform 0.3s ease-out,
+        box-shadow 0.12s ease-out;
+}
+
+
+.brand-logos img {
+
+    width: 120px;
+
+    height: 100px;
+
+    object-fit: contain;
+
+    opacity: 0.9;
+
+    pointer-events: none;
+}
+
+
+/* Brand reveal */
+
+.brand-logos.show a {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition:
+        opacity 0s ease,
+        transform 0.5s ease,
+        box-shadow 0s ease;
+}
+
+
+.brand-logos.show a:nth-child(4) {
+
+    transition-delay: 0.2s;
+}
+
+
+.brand-logos.show a:nth-child(3) {
+
+    transition-delay: 0.45s;
+}
+
+
+.brand-logos.show a:nth-child(2) {
+
+    transition-delay: 0.66s;
+}
+
+
+.brand-logos.show a:nth-child(1) {
+
+    transition-delay: 0.90s;
+}
+
+
+/* Brand hover */
+
+.brand-logos.show a:hover {
+
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 10px #2563eb,
+        0 0 25px #2563eb,
+        0 0 40px rgba(37, 99, 235, 0.5);
+
+    z-index: 5;
+
+    transition:
+        transform 0.12s ease-out,
+        box-shadow 0.12s ease-out;
+} */
+
+
+/* =====================================================
+   13. FOOTER
+===================================================== */
+.footer {
+    width: 100%;
+  background-color: #010013;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 35px 8%;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.footer div:first-child {
+    text-align: left;
+     background-color: #010013;
+}
+
+.footer div:last-child {
+    text-align: right;
+    margin-top: -3.5em;
+}
+
+.footer h2 {
+    color: #ccc;
+    margin: 0 0 10px;
+    font-size: 25px;
+}
+
+.footer p {
+    margin: 0;
+    color: #ccc;
+    font-size: 15px;
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .footer {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .footer div:first-child,
+    .footer div:last-child {
+        text-align: center;
+    }
+}
+
+/* =====================================================
+   14. PRODUCTS PAGE TITLE
+===================================================== */
+
+.title {
+
+    text-align: center;
+
+    margin: 40px;
+
+    color: white;
+}
+
+
+/* =====================================================
+   15. PRODUCTS
+===================================================== */
+
+.products {
+
+    width: 90%;
+
+    margin: 30px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 20px;
+
+    transition:
+        width 0.6s ease,
+        margin 0.6s ease;
+}
+
+
+/* =====================================================
+   PRODUCTS WHEN MENU OPEN
+===================================================== */
+
+.page-container.menu-open .products {
+
+    width: 90%;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
+
+.product {
+
+    opacity: 0.9;
+
+    border:
+        0.5px solid
+        rgb(252, 250, 250);
+
+    box-shadow:
+        inset 2px 2px 2px
+        rgb(0, 0, 82);
+
+    background:
+        rgb(250, 249, 249);
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Product hover */
+
+.product:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px #eb2525;
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
+
+.image {
+
+    height: 120px;
+
+    background-color:
+        rgb(231, 231, 231);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 55px;
+
+    border-radius: 10%;
+}
+
+
+.image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   PRODUCT BUTTON
+===================================================== */
+
+.product button {
+
+    background:
+        rgb(0, 45, 75);
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.product button:hover {
+
+    background:
+        rgb(0, 73, 182);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =====================================================
+   PRODUCT TITLE
+===================================================== */
+
+.product h3 {
+
+    color:
+        rgb(0, 73, 182);
+}
+
+
+/* =====================================================
+   PRODUCT PRICE
+===================================================== */
+
+.product p {
+
+    color:
+        rgb(226, 0, 0);
+}
+
+
+/* =====================================================
+   16. PRODUCTS PAGE BOTTOM MESSAGE
+===================================================== */
+
+.home {
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    margin-bottom: 0;
+
+    color: white;
+}
+
+
+/* =====================================================
+   17. DASHBOARD
+===================================================== */
+
+.dashboard {
+
+    width: 80%;
+
+    margin: 40px auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 8px;
+}
+
+
+/* =====================================================
+   18. CART
+===================================================== */
+
+.cart {
+
+    width: 80%;
+
+    background: #060b15;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    border-radius: 8px;
+}
+
+
+.cart h1 {
+
+    margin-bottom: 25px;
+}
+
+
+/* Cart item */
+
+.cart-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    background: #111827;
+
+    border-radius: 10px;
+
+    flex-wrap: wrap;
+
+    color: #ffffff;
+}
+
+
+.cart-item img {
+
+    width: 100px;
+
+    height: 80px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+.cart-item h3 {
+
+    font-size: 18px;
+
+    min-width: 130px;
+
+    color: #ffffff;
+}
+
+
+.cart-item p {
+
+    font-size: 15px;
+
+    margin: 0;
+
+    color: #ffffff;
+}
+
+
+/* Quantity */
+
+.quantity-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #ffffff;
+}
+
+
+.quantity-controls button {
+
+    padding: 6px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+/* Remove */
+
+.cart-item > button {
+
+    padding: 8px 15px;
+
+    background: #dc2626;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+/* Place order */
+
+.cart > button {
+
+    display: block;
+
+    margin:
+        25px 0 0 auto;
+
+    padding:
+        12px 25px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   19. DASHBOARD BOXES
+===================================================== */
+
+.boxes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.boxes div {
+
+    background: #eee;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+
+.boxes p {
+
+    font-size: 30px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   20. TABLE
+===================================================== */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+th,
+td {
+
+    border:
+        1px solid #ddd;
+
+    padding: 12px;
+
+    text-align: left;
+}
+
+
+/* =====================================================
+   21. BIKE CAROUSEL
+===================================================== */
+
+.carousel {
+
+    width: 100%;
+
+    background: transparent;
+
+    margin-top: 2em;
+
+    overflow: hidden;
+}
+
+.carousel-item .bike-image img {
+    opacity: 0;
+}
+
+.carousel-item.active .bike-image img {
+    animation: bikeFadeIn 0.8s ease forwards;
+}
+
+
+@keyframes bikeFadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-bike-bg {
+
+    position: absolute;
+
+    right: 0%;
+    top:22%;
+
+    font-family: Impact, sans-serif;
+
+    font-size: 290px;
+
+    color: rgba(255,255,255,0.025);
+
+    z-index: 1;
+}
+
+.bike-slide {
+
+    display: flex;
+
+    margin-right: -4em;
+
+    flex-direction: row-reverse;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    min-height: 450px;
+
+    padding: 30px 6%;
+
+    gap: 30px;
+}
+
+
+/* Bike image */
+
+.bike-image {
+
+    margin-top: 30px;
+
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    display: flex;
+
+    /* align-items: flex-start; */
+
+    justify-content: flex-end;
+}
+
+
+/* Background text */
+
+.bike-bg-text {
+
+    position: absolute;
+
+    top: -15%;
+
+    right: 3%;
+
+    color:
+        rgba(0, 0, 0, 0.473);
+
+    z-index: 1;
+
+    animation:
+        bike-bg-text 1.2s ease;
+}
+
+
+.bike-bg-text h1 {
+     font-family: "Ultra", serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 140px;
+     white-space: nowrap;
+}
+
+
+/* Bike image */
+
+.bike-image img {
+
+    position: relative;
+
+    width: 130%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 2;
+
+    animation:
+        bikeEnter 1s ease;
+}
+
+
+/* =====================================================
+   BIKE CONTENT
+===================================================== */
+
+.bike-content {
+
+    width:100%;
+
+    height: auto;
+
+    text-align: left;
+
+    color: white;
+
+    animation:
+        textEnter 1.6s ease;
+}
+
+
+.bike-content h1 {
+ font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+font-size:78px;
+
+    margin-top: -30px;
+
+    font-weight: 8000;
+
+    /* white-space: nowrap; */
+
+    line-height: 1.2;
+}
+
+.bike-content h2 {
+
+    font-size:28px;
+
+    
+    color:
+        rgb(255, 255, 255);
+
+    font-size: 100px;
+    height: auto;
+
+    font-weight: 1000;
+
+    line-height: 2.2;
+
+    margin-bottom: 20px;
+
+    animation:
+        h2 1.7s ease;
+}span{
+     color: #6854ff;
+}
+
+
+.bike-content p {
+
+    font-size: 18px;
+
+    color: #c5c5d5;
+
+    margin-bottom: 30px;
+}
+
+
+/* Bike button */
+
+.bike-btn {
+    display: inline-block;
+
+    padding:
+        12px 30px;
+
+    background: #614fe6b6;
+
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.bike-btn:hover {
+
+    background: #168bff;
+
+    color: white;
+
+    transform:
+        scale(1.08);
+
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   BIKE TEXT ANIMATION
+===================================================== */
+
+@keyframes textEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-2000px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes h2 {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(2000px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+@keyframes  bike-bg-text  {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translatey(-1000px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =====================================================
+   22. LOGIN FORM
+===================================================== */
+
+.form {
+
+    width: 380px;
+
+    margin: 80px auto;
+
+    background:
+        rgba(6, 11, 21, 0.95);
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 30px
+        rgba(0, 0, 0, 0.5);
+
+    color: white;
+
+    box-sizing: border-box;
+}
+
+
+.form h1 {
+
+    text-align: center;
+
+    font-size: 38px;
+
+    margin-bottom: 35px;
+
+    color: white;
+}
+
+
+.form label {
+
+    display: block;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+
+    margin-top: 20px;
+
+    color: #ffffff;
+}
+
+
+.form input {
+
+    width: 100%;
+
+    padding:
+        13px 15px;
+
+    box-sizing: border-box;
+
+    border:
+        2px solid #444;
+
+    border-radius: 10px;
+
+    background:
+        #111827;
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.form input:focus {
+
+    border-color:
+        #ff3b00;
+
+    box-shadow:
+        0 0 12px
+        rgba(255, 59, 0, 0.5);
+}
+
+
+.form input::placeholder {
+
+    color: #888;
+}
+
+
+/* Login button */
+
+.form button {
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ff3b00;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.form button:hover {
+
+    background: #006eff;
+
+    transform:
+        scale(1.04);
+
+    box-shadow:
+        0 0 20px
+        rgba(0, 110, 255, 0.7);
+}
+
+
+#message {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   23. RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .products {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .page-container.menu-open .products {
+
+        grid-template-columns:
+            repeat(1, 1fr);
+    }
+}
+
+
+/* =====================================================
+   24. RESPONSIVE - 800PX
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .products {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .boxes {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .footer {
+
+        gap: 30px;
+
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =====================================================
+   25. RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /*
+       On mobile the menu becomes a
+       section below the main content.
+    */
+
+    .page-container {
+
+        display:block;
+    }
+
+
+    .main-content {
+
+        width: 100% !important;
+    }
+
+
+    .page-container.menu-open
+    .main-content {
+
+        width: 100% !important;
+    }
+
+
+    .menu-content {
+
+        width: 100% !important;
+
+        min-width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        max-height: 0;
+
+        padding: 0 !important;
+
+        opacity: 0;
+
+        transform:
+            translateY(-20px);
+
+        overflow: hidden;
+    }
+
+
+    .page-container.menu-open
+    .menu-content {
+
+        width: 100% !important;
+
+        min-width: 100%;
+
+        max-height: 1000px;
+
+        padding:
+            40px 30px !important;
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+
+    .products {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .page-container.menu-open
+    .products {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .cart {
+
+        width: 95%;
+
+        padding: 15px;
+    }
+
+
+    .cart-item {
+
+        gap: 12px;
+
+        padding: 12px;
+    }
+}
+
+
+/* =====================================================
+   26. CAROUSEL MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .bike-slide {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 20px;
+
+        gap: 10px;
+    }
+
+
+    .bike-image {
+
+        width: 100%;
+
+        height: 250px;
+    }
+
+
+    .bike-image img {
+
+        height: 250px;
+    }
+
+
+    .bike-bg-text {
+
+        top: 35%;
+
+        font-size: 45px;
+    }
+
+
+    .bike-content {
+
+        width: 100%;
+
+        padding-top: 10px;
+
+        text-align: center;
+    }
+}
