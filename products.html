@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RiderHub Products</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =========================================
+         PAGE CONTAINER
+    ========================================== -->
+    
+
+            <!-- =========================================
+                 NAVBAR
+            ========================================== -->
+
+            <navbar class="navbar" id="Navbar">
+
+                <!-- Menu Button -->
+                <button class="menu-btn"
+                        id="menuBtn"
+                        onclick="toggleMenu()">
+
+                    ☰
+
+                </button>
+
+                <!-- Logo -->
+                <img src="images/logo.png"
+                     class="riderhub-logo"
+                     alt="RiderHub">
+
+            </navbar>
+
+
+
+    <div class="page-container" id="pageContainer">
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+
+        <div class="main-content" id="mainContent">
+
+            <!-- =========================================
+                 PRODUCTS
+            ========================================== -->
+
+            <div class="products" id="productList">
+
+
+                <!-- Handlebar -->
+                <div class="product"
+                     data-name="Handlebar"
+                     data-price="1100">
+
+                    <div class="image">
+                        <img src="images/handlebar.jpeg"
+                             alt="Handlebar">
+                    </div>
+
+                    <h3>Handlebar</h3>
+
+                    <p>₹1100</p>
+
+                    <button onclick="addToCart('Handlebar', 1100, 1)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <!-- Mudguard -->
+                <div class="product"
+                     data-name="Mudguard"
+                     data-price="1800">
+
+                    <div class="image">
+                        <img src="images/mudquard.jpeg"
+                             alt="Mudguard">
+                    </div>
+
+                    <h3>Mudguard</h3>
+
+                    <p>₹1800</p>
+
+                    <button onclick="addToCart('Mudguard', 1800, 2)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <!-- Quick Throttle -->
+                <div class="product"
+                     data-name="Quick Throttle"
+                     data-price="499">
+
+                    <div class="image">
+                        <img src="images/quickthrottle.jpeg"
+                             alt="Quick Throttle">
+                    </div>
+
+                    <h3>Quick Throttle</h3>
+
+                    <p>₹499</p>
+
+                    <button onclick="addToCart('Quick Throttle', 499, 3)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <!-- Mobile Holder -->
+                <div class="product"
+                     data-name="Mobile Holder"
+                     data-price="250">
+
+                    <div class="image">
+                        <img src="images/mobileholder.jpeg"
+                             alt="Mobile Holder">
+                    </div>
+
+                    <h3>Mobile Holder</h3>
+
+                    <p>₹250</p>
+
+                    <button onclick="addToCart('Mobile Holder', 250, 4)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <!-- LED Headlight -->
+                <div class="product"
+                     data-name="LED Headlight"
+                     data-price="299">
+
+                    <div class="image">
+                        <img src="images/ledlight.jpeg"
+                             alt="LED Headlight">
+                    </div>
+
+                    <h3>LED Headlight</h3>
+
+                    <p>₹299</p>
+
+                    <button onclick="addToCart('LED Headlight', 299, 5)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <!-- Crash Guard -->
+                <div class="product"
+                     data-name="Crash Guard"
+                     data-price="350">
+
+                    <div class="image">
+                        <img src="images/crashguard.jpeg"
+                             alt="Crash Guard">
+                    </div>
+
+                    <h3>Crash Guard</h3>
+
+                    <p>₹350</p>
+
+                    <button onclick="addToCart('Crash Guard', 350, 6)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <!-- Bike Mirror -->
+                <div class="product"
+                     data-name="Bike Mirror"
+                     data-price="400">
+
+                    <div class="image">
+                        <img src="images/mirror.jpeg"
+                             alt="Bike Mirror">
+                    </div>
+
+                    <h3>Bike Mirror</h3>
+
+                    <p>₹400</p>
+
+                    <button onclick="addToCart('Bike Mirror', 400, 7)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <!-- Horn -->
+                <div class="product"
+                     data-name="Horn"
+                     data-price="449">
+
+                    <div class="image">
+                        <img src="images/horn.jpeg"
+                             alt="Horn">
+                    </div>
+
+                    <h3>Horn</h3>
+
+                    <p>₹449</p>
+
+                    <button onclick="addToCart('Horn', 449, 8)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <!-- USB Charger -->
+                <div class="product"
+                     data-name="USB Charger"
+                     data-price="199">
+
+                    <div class="image">
+                        <img src="images/usbcharger.jpeg"
+                             alt="USB Charger">
+                    </div>
+
+                    <h3>USB Charger</h3>
+
+                    <p>₹199</p>
+
+                    <button onclick="addToCart('USB Charger', 199, 9)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+                <!-- Tank Pad -->
+                <div class="product"
+                     data-name="Tank Pad"
+                     data-price="99">
+
+                    <div class="image">
+                        <img src="images/tankpad.jpeg"
+                             alt="Tank Pad">
+                    </div>
+
+                    <h3>Tank Pad</h3>
+
+                    <p>₹99</p>
+
+                    <button onclick="addToCart('Tank Pad', 99, 10)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- =========================================
+             MENU
+        ========================================== -->
+
+        <div class="menu-content" id="menuContent">
+
+
+            <!-- Search / Price Filter -->
+
+            <div class="price-filter">
+
+                <label for="priceFilter">
+                    SEARCH
+                </label>
+
+                <select id="priceFilter"
+                        onchange="filterProducts()">
+
+                    <option value="all">
+                        All Products
+                    </option>
+
+                    <option value="500">
+                        Below ₹500
+                    </option>
+
+                    <option value="1000">
+                        Below ₹1000
+                    </option>
+
+                    <option value="2000">
+                        Below ₹2000
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Menu Links -->
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+
+        </div>
+
+    </div>
+
+    
+
+            <!-- =========================================
+                 BOTTOM TEXT
+            ========================================== -->
+
+            <h2 class="home">
+                RIDING IS THE GOOD THING IN EVERYONE'S LIFE.
+                FEEL ALIVE, GET YOUR ACCESSORIES....
+            </h2>
+
+
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
