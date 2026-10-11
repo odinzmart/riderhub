@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<navbar class="navbar">
+    <img src="images/logo.png" class="riderhub-logo" alt="RiderHub">
+     
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="login.html">Login</a>
+    <a href="cart.html">Cart</a>
+</navbar>
+
+<div class="cart">
+    <h1 style="color: aliceblue;">My Cart</h1>
+    <div id="cartItems"></div>
+    <h2 id="total"></h2>
+    <button onclick="placeOrder()">Place Order</button>
+</div>
+
+<script src="js/script.js"></script>
+<script>showCart();</script>
+</body>
+</html>
