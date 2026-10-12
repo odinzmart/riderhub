@@ -1294,10 +1294,9 @@ button {
 
 .page-container.menu-open .products {
 
-    width: 90%;
-
+    width: 95%;
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(4, 1fr);
 }
 
 
